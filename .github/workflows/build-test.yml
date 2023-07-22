@@ -9,6 +9,8 @@ jobs:
         ocaml-version:
           # - 4.14.1
           - 5.0.0
+        ocaml-general-gha-tag:
+          - attempt12
 
     runs-on: ubuntu-latest
 
@@ -17,6 +19,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build and test
-        uses: kxcdev/ocaml-general-gha@v0.0.1-attempt12
+        uses: kxcdev/ocaml-general-gha@v0.0.1-${{ matrix.ocaml-general-gha-tag }}
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
