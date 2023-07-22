@@ -1,0 +1,22 @@
+name: build and test using kxcdev/ocaml-general-gha
+
+on: push
+
+jobs:
+  build-test:
+    strategy:
+      matrix:
+        ocaml-version:
+          - 4.14.1
+          - 5.0.0
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build and test
+        uses: kxcdev/ocaml-general-gha@v0.0.1-attempt1
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
