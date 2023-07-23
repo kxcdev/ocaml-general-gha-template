@@ -16,6 +16,6 @@ jobs:
         with:
           build-command: "dune build @all"
           test-command: "dune build @runtest"
-          setup-command: "echo setup"
-          skip-setup: true
+          setup-command: "opam install -y base64"
+          skip-setup: false
           skip-testing: false
