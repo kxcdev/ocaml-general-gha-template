@@ -31,10 +31,10 @@ jobs:
       - name: ls _build/default
         run: ls _build/default
 
-      - run: echo "steps.camlbuild.outputs.odoc-site-path: ${{ steps.camlbuild.outputs.odoc-site-path }}"
+      - run: echo "steps.camlbuild.outputs.odoc-site-path ${{ steps.camlbuild.outputs.odoc-site-path }}"
         shell: bash
 
-      - run: echo "steps.camlbuild.outputs.odoc-github-pages-url: ${{ steps.camlbuild.outputs.odoc-github-pages-url }}"
+      - run: echo "steps.camlbuild.outputs.odoc-github-pages-url ${{ steps.camlbuild.outputs.odoc-github-pages-url }}"
         shell: bash
 
       # - name: Setup Pages
