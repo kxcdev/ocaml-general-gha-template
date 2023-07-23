@@ -23,10 +23,11 @@ jobs:
       - name: Build and test
         uses: kxcdev/ocaml-general-gha@v2
         with:
-          build-command: "dune build && dune build @doc"
+          # build-command: "dune build && dune build @doc"
+          with-odoc: true
 
-      - name: ls _build
-        run: ls _build
+      - name: ls _build/default
+        run: ls _build/default
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
