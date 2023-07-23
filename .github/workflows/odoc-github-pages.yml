@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and test
         id: camlbuild
-        uses: kxcdev/ocaml-general-gha@v2-future
+        uses: kxcdev/ocaml-general-gha@v3
         with:
           with-odoc: true
           odoc-upload-artifact: true # could be omitted

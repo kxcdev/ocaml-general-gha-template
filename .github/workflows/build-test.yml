@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: OCaml Checks
-        uses: kxcdev/ocaml-general-gha@v2-future
+        uses: kxcdev/ocaml-general-gha@v3
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
           node-version: ${{ matrix.node-version }}
