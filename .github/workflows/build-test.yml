@@ -16,4 +16,5 @@ jobs:
         with:
           build-command: "dune build @all"
           test-command: "dune build @runtest"
+          setup-command: "echo setup"
           skip-testing: false
