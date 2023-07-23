@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and test
         id: camlbuild
-        uses: kxcdev/ocaml-general-gha@v2-future-wip
+        uses: kxcdev/ocaml-general-gha@v2-future
         with:
           # build-command: "dune build && dune build @doc"
           with-odoc: true
