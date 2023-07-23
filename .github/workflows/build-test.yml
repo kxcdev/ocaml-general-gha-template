@@ -13,3 +13,48 @@ jobs:
 
       - name: Build and test
         uses: kxcdev/ocaml-general-gha@v2
+
+      - name: ls _build
+        run: ls _build
+
+# name: ocaml-general-check
+
+# on: push
+
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+# jobs:
+#   ocaml-general:
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+#         with:
+#           submodules: recursive
+#           fetch-depth: 2
+
+#       - name: Build and test OCaml
+#         uses: kxcdev/ocaml-general-gha@v2
+#         with:
+#           setup-command: "./scripts/ci_setup_ubuntu.sh && opam install . --yes --deps-only --with-test --verbose"
+#           build-command: "dune build && dune build @doc"
+
+      # - run: ls _build
+
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v3
+
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     path: "_build/default/_doc/_html"
+
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v2
