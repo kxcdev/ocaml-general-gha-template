@@ -1,7 +1,8 @@
 name: upload odoc to GitHub Pages using kxcdev/ocaml-general-gha
 
 on:
-  push: [main]
+  push:
+    branches: [main]
 
 permissions:
   contents: read
