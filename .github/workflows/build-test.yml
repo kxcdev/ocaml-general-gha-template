@@ -12,7 +12,10 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.odoc-github-pages-url }}
+
+      ## waiting for resolution of actions/runner#2009
+      #url: ${{ steps.camlbuild.outputs.odoc-github-pages-url }}
+      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
