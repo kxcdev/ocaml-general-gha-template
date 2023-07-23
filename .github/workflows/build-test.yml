@@ -1,9 +1,21 @@
 name: build and test using kxcdev/ocaml-general-gha
 
-on: push
+on:
+  push:
+  pull_request:
+    types: [synchronize]
 
 jobs:
   build-test:
+    strategy:
+
+      matrix:
+        ocaml-version:
+          - 4.14.1
+          - 5.0.0
+        node-version:
+          - hydrogen # v18 Active LTS
+          - latest
 
     runs-on: ubuntu-latest
 
@@ -11,5 +23,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build and test
-        uses: kxcdev/ocaml-general-gha@v2
+      - name: OCaml Checks
+        uses: kxcdev/ocaml-general-gha@v2-future
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+          node-version: ${{ matrix.node-version }}
+          pr-report-test-result: ${{ matrix.ocaml-version == '5.0.0' }}
