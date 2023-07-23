@@ -28,3 +28,4 @@ jobs:
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
           node-version: ${{ matrix.node-version }}
+          pr-report-test-result: ${{ matrix.ocaml-version == '5.0.0' }}
