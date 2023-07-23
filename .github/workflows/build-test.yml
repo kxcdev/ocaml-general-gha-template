@@ -1,7 +1,7 @@
 name: build and test using kxcdev/ocaml-general-gha
 
 on:
-  push
+  push:
   pull_request:
     types: [opened, synchronize, reopened]
 
