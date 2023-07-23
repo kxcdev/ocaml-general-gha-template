@@ -14,5 +14,6 @@ jobs:
       - name: Build and test
         uses: kxcdev/ocaml-general-gha@v2-wip
         with:
-          test-command: "echo 'let us fail' && false"
+          build-command: "dune build @all"
+          test-command: "dune build @runtest"
           skip-testing: false
